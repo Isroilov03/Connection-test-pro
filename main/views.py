@@ -11,6 +11,10 @@ from .models import *
 @api_view(['GET'])
 def filter_user_by_username(request):
     username = request.GET.get('username')
+    print("This is new changes")
+    print("This is new changes")
+    print("This is new changes")
+    print("This is new changes")
     users = User.objects.filter(username__icontains=username).order_by('-id')
     ser = UserSerializer(users, many=True)
     return Response(ser.data)
